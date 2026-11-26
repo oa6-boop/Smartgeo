@@ -577,7 +577,7 @@ Il met en pratique plusieurs domaines informatiques :
 
 ## 📄 Licence
 
-Projet réalisé à des fins académiques et pédagogiques.
+Projet par Ahmed Ouaadidy & Taha Slaoui.
 
 ---
 
