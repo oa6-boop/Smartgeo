@@ -1,0 +1,130 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sg_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="18dp"
+        android:background="@color/sg_surface">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Messagerie"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/sg_text" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Communiquez avec votre administrateur"
+            android:textSize="13sp"
+            android:textColor="@color/sg_muted" />
+
+        <Spinner
+            android:id="@+id/spinnerContacts"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="14dp"
+            android:background="@color/sg_background"
+            android:paddingHorizontal="12dp" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressMessages"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:visibility="gone"
+        android:indeterminate="true" />
+
+    <ScrollView
+        android:id="@+id/scrollMessages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/messagesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp" />
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="9dp"
+        android:background="@color/sg_surface">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAttachFile"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_marginEnd="7dp"
+            android:text="📎"
+            android:textSize="20sp"
+            android:contentDescription="Joindre un fichier"
+            app:cornerRadius="15dp"
+            app:backgroundTint="@color/sg_light_blue"
+            android:textColor="@color/sg_primary" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Votre message"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="14dp"
+            app:boxCornerRadiusTopEnd="14dp"
+            app:boxCornerRadiusBottomStart="14dp"
+            app:boxCornerRadiusBottomEnd="14dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLines="4"
+                android:minLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSendMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="52dp"
+            android:layout_marginStart="7dp"
+            android:text="Envoyer"
+            android:textSize="12sp"
+            app:cornerRadius="15dp"
+            app:backgroundTint="@color/sg_primary" />
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sg_surface"
+        app:menu="@menu/bottom_navigation"
+        app:itemIconTint="@color/sg_primary"
+        app:itemTextColor="@color/sg_primary"
+        app:labelVisibilityMode="labeled" />
+
+</LinearLayout>

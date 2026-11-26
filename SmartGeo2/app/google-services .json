@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "989368926563",
+    "project_id": "smartgeoo-c6e9c",
+    "storage_bucket": "smartgeoo-c6e9c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989368926563:android:2137e3a18410c6816c5356",
+        "android_client_info": {
+          "package_name": "com.smartgeo.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4yC4fitzna-QxF72aD1aJ7q1mNSFtvbk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

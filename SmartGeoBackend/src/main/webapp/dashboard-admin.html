@@ -1,0 +1,113 @@
+
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1">
+
+    <title>SmartGeo | Administration</title>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet"
+          href="admin/style.css">
+
+    <link rel="stylesheet"
+          href="admin/workspace.css">
+<link rel="stylesheet" href="admin/admin-trips.css?v=20261125-211938-898">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div>
+            <h1>🌍 SmartGeo</h1>
+
+            <p>
+                Administration · Missions · GPS ·
+                Messagerie · Signalements
+            </p>
+        </div>
+
+        <button class="logout"
+                id="logoutBtn"
+                type="button">
+            Se déconnecter
+        </button>
+
+    </header>
+
+    <main class="container">
+
+        <nav id="adminNav"
+             class="admin-nav"
+             aria-label="Navigation administrateur">
+
+            <button data-page="home" class="active">
+                Vue d'ensemble
+            </button>
+
+            <button data-page="users">
+                Utilisateurs
+            </button>
+
+            <button data-page="missions">
+                Missions
+            </button>
+
+            <button data-page="gps">
+                Carte GPS
+            </button>
+
+            <button data-page="schedules">
+                Plannings GPS
+            </button>
+
+            <button data-page="messages">
+                Messagerie
+            </button>
+
+            <button data-page="requests">
+                Localisations
+            </button>
+
+            <button data-page="reports">
+                Signalements
+            </button>
+
+        </nav>
+
+        <p id="adminNotice"
+           class="admin-notice"
+           role="status"
+           hidden></p>
+
+        <section id="adminContent"
+                 aria-live="polite">
+
+            <div class="panel">
+                Chargement…
+            </div>
+
+        </section>
+
+    </main>
+
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+
+    <script src="config.js"></script>
+
+    <script src="admin/dashboard.js"></script>
+
+    <script src="admin/user-deletion.js"></script>
+
+<script src="admin/admin-trips.js?v=20261125-211938-898"></script>
+</body>
+</html>

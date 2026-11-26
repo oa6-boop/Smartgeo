@@ -1,0 +1,459 @@
+
+/* ========================================
+   SMARTGEO V2 - DESIGN ADMIN
+   ======================================== */
+
+.sgv {
+    --blue: #5271DE;
+    --blue-dark: #3857BD;
+    --navy: #14213D;
+    --pink: #C42B6B;
+    --muted: #64748B;
+    --border: #E0E6F0;
+
+    width: 100%;
+    min-width: 0;
+    color: var(--navy);
+}
+
+.sgv *,
+.sgv-table-controls * {
+    box-sizing: border-box;
+}
+
+.sgv [hidden],
+.admin-table tr[hidden] {
+    display: none !important;
+}
+
+.sgv-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.sgv-heading h2 {
+    font-size: 26px;
+    font-weight: 750;
+    margin: 0;
+}
+
+.sgv-heading h3 {
+    margin: 0;
+}
+
+.sgv-heading p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 6px 0 0;
+}
+
+.sgv-card {
+    min-width: 0;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+
+    box-shadow:
+            0 3px 14px rgba(20, 33, 61, .04);
+}
+
+.sgv-card h3 {
+    font-size: 17px;
+    font-weight: 750;
+    margin: 0 0 16px;
+}
+
+.sgv-kpis {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(175px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.sgv-metric {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    gap: 6px;
+    padding: 16px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.sgv-metric span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.sgv-metric strong {
+    font-size: 23px;
+    color: var(--blue-dark);
+    line-height: 1.25;
+    font-weight: 750;
+    overflow-wrap: anywhere;
+    font-variant-numeric: tabular-nums;
+}
+
+.sgv-metric small {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.sgv-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.sgv-metrics .sgv-metric {
+    padding: 12px;
+}
+
+.sgv-metrics .sgv-metric strong {
+    font-size: 16px;
+}
+
+.sgv-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 5px;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.sgv button,
+.sgv-table-controls button {
+    cursor: pointer;
+    border: none;
+    border-radius: 9px;
+    background: #5271DE;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 650;
+    min-height: 38px;
+    padding: 10px 14px;
+}
+
+.sgv button:hover {
+    filter: brightness(.95);
+}
+
+.sgv button:disabled,
+.sgv-table-controls button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.sgv .sgv-tabs button {
+    color: #52627A;
+    background: transparent;
+}
+
+.sgv .sgv-tabs button.selected {
+    background: var(--blue);
+    color: #FFFFFF;
+}
+
+.sgv .admin-secondary,
+.sgv-table-controls .admin-secondary {
+    color: #3857BD;
+    border: 1px solid #D9E2FA;
+    background: #EDF1FF;
+}
+
+.sgv-layout {
+    display: grid;
+    grid-template-columns: 335px minmax(0, 1fr);
+    gap: 18px;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
+.sgv-sidebar {
+    min-width: 0;
+}
+
+.sgv-sidebar > .sgv-card:last-child {
+    margin-bottom: 0;
+}
+
+.sgv label {
+    display: block;
+    color: #354762;
+    font-weight: 650;
+    font-size: 13px;
+    margin-top: 14px;
+    margin-bottom: 7px;
+}
+
+.sgv input,
+.sgv select,
+.sgv-table-controls input,
+.sgv-table-controls select {
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    padding: 9px 12px;
+    color: #14213D;
+    background: #FFFFFF;
+    border: 1px solid #D8E0EC;
+    border-radius: 9px;
+    font: inherit;
+    font-size: 13px;
+}
+
+.sgv input:focus,
+.sgv select:focus,
+.sgv-table-controls input:focus {
+    outline: 3px solid rgba(82, 113, 222, .18);
+    border-color: #5271DE;
+}
+
+#sgvLoad {
+    width: 100%;
+    margin-top: 16px;
+}
+
+#sgvAgents {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 450px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.sgv .sgv-agent {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+    background: #F7F9FD;
+    color: var(--navy);
+    border: 1px solid var(--border);
+    padding: 12px;
+    width: 100%;
+}
+
+.sgv-agent i {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+}
+
+.sgv-agent span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.sgv-agent small {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.sgv-map-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 0;
+    padding: 14px;
+}
+
+.sgv-map-toolbar,
+.sgv-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+#sgvMap {
+    min-height: 600px;
+    width: 100%;
+    flex: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    isolation: isolate;
+    background: #E8EDF4;
+}
+
+.sgv-map-card:fullscreen {
+    background: #FFFFFF;
+    padding: 18px;
+}
+
+.sgv-map-card:fullscreen #sgvMap {
+    min-height: 0;
+    height: 100%;
+}
+
+.sgv .leaflet-popup-content button {
+    display: block;
+    margin-top: 8px;
+    width: 100%;
+}
+
+.sgv-note {
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.sgv-chart {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 18px;
+    padding: 18px 4px;
+}
+
+.sgv-chart-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+}
+
+.sgv-chart-column strong {
+    font-size: 13px;
+}
+
+.sgv-chart-column small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.sgv-chart-track {
+    width: 100%;
+    max-width: 48px;
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    background: #EDF1F8;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.sgv-chart-bar {
+    width: 100%;
+    background: #5271DE;
+    border-radius: 7px 7px 0 0;
+}
+
+/* Tableaux existants */
+
+.sgv-table-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.sgv-table-controls input {
+    flex: 1 1 180px;
+}
+
+.sgv-table-controls select {
+    width: auto;
+}
+
+.sgv-table-controls small {
+    color: #64748B;
+    font-size: 12px;
+}
+
+.admin-table th {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.admin-table td {
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+    background: #F6F8FE;
+}
+
+.admin-actions {
+    gap: 7px;
+}
+
+.admin-actions button,
+.admin-actions select {
+    border-radius: 9px;
+}
+
+/* Responsive */
+
+@media (max-width: 1150px) {
+
+    .sgv-layout {
+        grid-template-columns: 285px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .sgv-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 850px) {
+
+    .sgv-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #sgvMap {
+        min-height: 460px;
+    }
+
+    .sgv-chart {
+        gap: 7px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .sgv-kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sgv-heading h2 {
+        font-size: 21px;
+    }
+
+    #sgvMap {
+        min-height: 380px;
+    }
+
+    .sgv-tabs button {
+        flex: 1;
+        padding: 8px;
+        font-size: 11px;
+    }
+}

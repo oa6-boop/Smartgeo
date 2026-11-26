@@ -1,0 +1,257 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sg_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="18dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Localisation GPS"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/sg_text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Suivez votre position et votre parcours."
+                android:textSize="13sp"
+                android:textColor="@color/sg_muted" />
+
+            <!-- CARTE GPS -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/sg_border">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <org.osmdroid.views.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="320dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/tvPointsCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Aucun point GPS enregistré"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/sg_text" />
+
+                        <TextView
+                            android:id="@+id/tvMapHint"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Votre parcours GPS apparaîtra ici."
+                            android:textSize="12sp"
+                            android:textColor="@color/sg_muted" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnCenterMap"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginTop="12dp"
+                            android:text="Ma position actuelle"
+                            app:cornerRadius="14dp"
+                            app:backgroundTint="@color/sg_primary" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- CONTROLE GPS -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                app:cardCornerRadius="22dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/sg_border">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="17dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Contrôle du suivi GPS"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/sg_text" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchConsent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Autoriser le partage GPS"
+                        android:textColor="@color/sg_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tvGpsStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Vérification du serveur..."
+                        android:textColor="@color/sg_muted"
+                        android:textSize="13sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSendGps"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Transmettre ma position"
+                        app:cornerRadius="15dp"
+                        app:backgroundTint="@color/sg_primary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTracking"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="9dp"
+                        android:text="Démarrer le suivi automatique"
+                        app:cornerRadius="15dp"
+                        app:backgroundTint="@color/sg_accent" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <ProgressBar
+                android:id="@+id/progressGps"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="12dp"
+                android:indeterminate="true"
+                android:visibility="gone" />
+
+            <!-- DERNIERE POSITION -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Dernière position enregistrée"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/sg_text" />
+
+            <TextView
+                android:id="@+id/tvLastPosition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/sg_surface"
+                android:padding="16dp"
+                android:text="Aucune position disponible."
+                android:textSize="14sp"
+                android:textColor="@color/sg_muted" />
+
+            <!-- HORAIRES GPS -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Mes horaires GPS"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/sg_text" />
+
+            <TextView
+                android:id="@+id/tvGpsSchedules"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/sg_surface"
+                android:padding="16dp"
+                android:text="Chargement des horaires..."
+                android:textSize="13sp"
+                android:textColor="@color/sg_muted" />
+
+            <!-- DEMANDES DE LOCALISATION -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Demandes de localisation"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/sg_text" />
+
+            <LinearLayout
+                android:id="@+id/locationRequestsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRefreshGps"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="20dp"
+                android:text="Actualiser la carte et le GPS"
+                app:cornerRadius="15dp"
+                app:backgroundTint="@color/sg_primary" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- NAVIGATION -->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sg_surface"
+        app:menu="@menu/bottom_navigation"
+        app:itemIconTint="@color/sg_primary"
+        app:itemTextColor="@color/sg_primary"
+        app:labelVisibilityMode="labeled" />
+
+</LinearLayout>

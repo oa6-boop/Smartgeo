@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/sg_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SMARTGEO"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.13"
+                android:textColor="@color/sg_accent" />
+
+            <TextView
+                android:id="@+id/tvWelcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Bonjour, Agent"
+                android:textSize="29sp"
+                android:textStyle="bold"
+                android:textColor="@color/sg_text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Voici votre espace de travail."
+                android:textSize="14sp"
+                android:textColor="@color/sg_muted" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_hero"
+                android:padding="22dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Votre activité en un coup d'œil"
+                    android:textColor="#D9F3F6"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvGpsState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Vérification du GPS..."
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="21sp" />
+
+                <TextView
+                    android:id="@+id/tvServerState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Connexion au serveur..."
+                    android:textColor="#D9F3F6"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="13dp"
+                android:text="Mes statistiques"
+                android:textColor="@color/sg_text"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="142dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/sg_border">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:padding="18dp">
+
+                        <TextView
+                            android:id="@+id/tvMissionCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="—"
+                            android:textSize="34sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/sg_primary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Missions affectées"
+                            android:textSize="13sp"
+                            android:textColor="@color/sg_muted" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="142dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/sg_border">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center_vertical"
+                        android:padding="18dp">
+
+                        <TextView
+                            android:id="@+id/tvProgressCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="—"
+                            android:textSize="34sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/sg_accent" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Missions en cours"
+                            android:textSize="13sp"
+                            android:textColor="@color/sg_muted" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:layout_marginBottom="14dp"
+                android:text="Accès rapides"
+                android:textColor="@color/sg_text"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnQuickMissions"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Voir mes missions"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/sg_primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnQuickGps"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:text="Ma localisation GPS"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/sg_accent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnQuickMessages"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:text="Contacter l'administrateur"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/sg_primary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnQuickReports"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="18dp"
+                android:text="Déclarer un signalement"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/sg_primary" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/sg_surface"
+        app:menu="@menu/bottom_navigation"
+        app:itemIconTint="@color/sg_primary"
+        app:itemTextColor="@color/sg_primary"
+        app:labelVisibilityMode="labeled" />
+
+</LinearLayout>

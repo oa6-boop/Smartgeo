@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>SmartGeo | Administration</title>
+
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="workspace.css">
+
+  <link rel="stylesheet" href="admin-modern.css">
+<link rel="stylesheet" href="admin-trips.css?v=20261125-211938-898">
+<link rel="stylesheet" href="admin-supervision.css?v=20261125-214237-261">
+</head>
+
+<body class="sg-admin">
+
+<div class="sg-shell">
+
+  <aside class="sg-sidebar">
+
+    <div class="sg-brand">
+      <div class="sg-brand-icon">⌖</div>
+
+      <div>
+        <strong>SmartGeo</strong>
+        <span>Administration</span>
+      </div>
+    </div>
+
+    <p class="sg-nav-caption">ESPACE DE GESTION</p>
+
+    <nav id="adminNav"
+         class="admin-nav"
+         aria-label="Navigation administrateur">
+
+      <button type="button"
+              data-page="home"
+              class="active">
+        <span class="sg-nav-icon">▦</span>
+        <span>Vue d'ensemble</span>
+      </button>
+
+      <button type="button" data-page="users">
+        <span class="sg-nav-icon">♙</span>
+        <span>Utilisateurs</span>
+      </button>
+
+      <button type="button" data-page="missions">
+        <span class="sg-nav-icon">▤</span>
+        <span>Missions</span>
+      </button>
+
+      <button type="button" data-page="gps">
+        <span class="sg-nav-icon">◎</span>
+        <span>Carte GPS</span>
+      </button>
+
+      <button type="button" data-page="schedules">
+        <span class="sg-nav-icon">◷</span>
+        <span>Plannings GPS</span>
+      </button>
+
+      <button type="button" data-page="messages">
+        <span class="sg-nav-icon">✉</span>
+        <span>Messagerie</span>
+      </button>
+
+      <button type="button" data-page="requests">
+        <span class="sg-nav-icon">⌖</span>
+        <span>Localisations</span>
+      </button>
+
+      <button type="button" data-page="reports">
+        <span class="sg-nav-icon">▧</span>
+        <span>Signalements</span>
+      </button>
+
+    </nav>
+
+    <div class="sg-sidebar-bottom">
+      <span class="sg-status-dot"></span>
+      Gestion SmartGeo
+    </div>
+
+  </aside>
+
+  <div class="sg-main">
+
+    <header class="topbar sg-topbar">
+
+      <div>
+        <p class="sg-eyebrow">
+          SMARTGEO / ADMINISTRATION
+        </p>
+
+        <h1 id="sgPageTitle">
+          Vue d'ensemble
+        </h1>
+
+        <p class="sg-subtitle">
+          Gérez vos équipes, missions et positions GPS.
+        </p>
+      </div>
+
+      <div class="sg-topbar-actions">
+
+        <div class="sg-admin-label">
+          <span class="sg-admin-avatar">A</span>
+          <span>Administrateur</span>
+        </div>
+
+        <button type="button"
+                class="logout"
+                id="logoutBtn">
+          Déconnexion
+        </button>
+
+      </div>
+
+    </header>
+
+    <main class="container sg-container">
+
+      <p id="adminNotice"
+         class="admin-notice"
+         role="status"
+         hidden></p>
+
+      <section id="adminContent"
+               aria-live="polite">
+
+        <div class="panel">
+          Chargement de SmartGeo…
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Logique ADMIN existante : on la conserve -->
+<script src="dashboard.js?v=20261125-193415"></script>
+
+<!-- Messagerie et pièces jointes -->
+<script src="admin-attachments.js"></script>
+
+<script src="admin-final.js?v=20261125-193415"></script>
+<script src="admin-trips.js?v=20261125-211938-898"></script>
+<script src="admin-supervision.js?v=20261125-214237-261"></script>
+</body>
+</html>
+

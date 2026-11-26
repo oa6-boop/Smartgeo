@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>SmartGeo - Connexion ADMIN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+
+<main class="login-card">
+    <h1>SmartGeo</h1>
+    <p>Connexion administrateur</p>
+
+    <form id="loginForm">
+        <label for="username">Nom d'utilisateur</label>
+        <input id="username" type="text"
+               autocomplete="username" required>
+
+        <label for="password">Mot de passe</label>
+        <input id="password" type="password"
+               autocomplete="current-password" required>
+
+        <button type="submit">Se connecter</button>
+    </form>
+
+    <p id="errorMessage" class="error" role="alert"></p>
+</main>
+
+<script>
+    const API = "../api";
+
+    document.getElementById("loginForm")
+        .addEventListener("submit", async (event) => {
+
+            event.preventDefault();
+
+            const error = document.getElementById("errorMessage");
+            error.textContent = "";
+
+            const username =
+                document.getElementById("username").value.trim();
+
+            const password =
+                document.getElementById("password").value;
+
+            try {
+                const response = await fetch(API + "/auth/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await response.json();
+
+                if (!response.ok || !result.data?.token) {
+                    throw new Error(
+                        result.message || "Identifiants incorrects"
+                    );
+                }
+
+                if (result.data.user?.role !== "ADMIN") {
+                    throw new Error(
+                        "Cette interface est reservee aux administrateurs"
+                    );
+                }
+
+                sessionStorage.setItem(
+                    "smartgeo_admin_token",
+                    result.data.token
+                );
+
+                window.location.replace("dashboard.html");
+
+            } catch (e) {
+                error.textContent = e.message;
+            }
+        });
+</script>
+
+</body>
+</html>

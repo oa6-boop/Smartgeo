@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>SmartGeo | Connexion</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+    <main class="login-card">
+
+        <div class="brand large">
+            🌍 SmartGeo
+        </div>
+
+        <h1>Connexion</h1>
+
+        <p>
+            Connectez-vous à votre espace de suivi
+            des missions.
+        </p>
+
+        <form id="loginForm">
+
+            <label for="loginIdentifier">
+                Nom d'utilisateur ou email
+            </label>
+
+            <input
+                type="text"
+                id="loginIdentifier"
+                name="identifier"
+                autocomplete="username"
+                placeholder="Entrez votre identifiant"
+                required
+            >
+
+            <label for="loginPassword">
+                Mot de passe
+            </label>
+
+            <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                autocomplete="current-password"
+                placeholder="Entrez votre mot de passe"
+                required
+            >
+
+            <button
+                type="submit"
+                id="loginButton"
+                class="primary full"
+            >
+                Se connecter
+            </button>
+
+        </form>
+
+        <p
+            id="loginError"
+            class="error"
+            role="alert"
+        ></p>
+
+    </main>
+
+    <script src="config.js"></script>
+    <script src="auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+/* SmartGeo : tableaux et formulaires administrateur */
+.admin-nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.admin-nav button{background:#e5ecf8;color:#24466d;padding:10px 14px}
+.admin-nav button.active,.admin-nav button:hover{background:#1d4ed8;color:#fff}
+.admin-notice{padding:14px 18px;border-radius:10px;background:#e8f3ff;color:#174b81;margin:16px 0}
+.admin-notice.bad{background:#feecef;color:#ad193b}
+.admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.admin-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.admin-stats .panel strong{display:block;font-size:30px;margin-top:8px;color:#1d4ed8}
+.admin-table{width:100%;border-collapse:collapse;min-width:650px}
+.admin-table td,.admin-table th{padding:11px 10px;text-align:left;border-bottom:1px solid #e4e9f2;vertical-align:top;font-size:14px}
+.admin-table th{color:#607188;font-weight:700}
+.table-scroll{overflow-x:auto}
+.admin-form{display:grid;gap:12px}
+.admin-form label{display:grid;gap:6px;font-size:14px;font-weight:600}
+.admin-form input,.admin-form select,.admin-form textarea,.field{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:8px;font:inherit;background:white}
+.admin-form textarea{min-height:95px}
+.admin-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.admin-actions{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.admin-actions button{padding:8px 10px}
+.admin-actions select,.admin-actions input{width:auto;max-width:190px;padding:8px}
+.admin-secondary{background:#e8f0ff;color:#1d4ed8}
+.admin-secondary:hover{background:#dbeafe}
+.admin-danger{background:#ffe4e8;color:#aa2141}
+.admin-danger:hover{background:#ffd2d9}
+.admin-muted{color:#65738b}
+.admin-badge{display:inline-block;padding:5px 9px;border-radius:20px;background:#eaf1fc;font-size:12px;font-weight:bold;color:#315b8c}
+.admin-badge.COMPLETED,.admin-badge.REVIEWED,.admin-badge.ACTIVE,.admin-badge.TRANSMITTED{background:#e0f6e7;color:#166534}
+.admin-badge.CANCELLED,.admin-badge.REJECTED,.admin-badge.BLOCKED,.admin-badge.REFUSED{background:#ffe6ea;color:#a0243c}
+.admin-badge.PENDING,.admin-badge.SUBMITTED{background:#fff4d5;color:#875c08}
+.admin-chat{max-height:340px;overflow-y:auto}
+.admin-msg{padding:12px;border-bottom:1px solid #edf0f5}
+.admin-msg.mine{background:#eff6ff}
+.admin-msg p{margin:6px 0;white-space:pre-wrap}
+.admin-map{height:450px;width:100%;border-radius:12px;overflow:hidden;position:relative;z-index:1}
+.admin-days{display:flex;gap:12px;flex-wrap:wrap}
+.admin-days label{display:flex;align-items:center;gap:5px;font-size:13px}
+.admin-days input{width:auto}
+.admin-small{font-size:12px}
+@media(max-width:900px){.admin-stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.admin-grid,.admin-two,.admin-stats{grid-template-columns:1fr}.admin-map{height:340px}.admin-nav button{font-size:12px}}
