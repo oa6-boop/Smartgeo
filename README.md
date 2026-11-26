@@ -104,8 +104,6 @@ L'agent utilise l'application mobile Android pour :
 - Android SDK
 - Android Studio
 - Google Play Services Location
-- Kotlin Coroutines
-- WorkManager
 - SQLite
 - Firebase Cloud Messaging
 - REST API
@@ -115,7 +113,6 @@ L'agent utilise l'application mobile Android pour :
 
 - Java
 - Jakarta EE
-- JAX-RS
 - Maven
 - WildFly Application Server
 - JDBC
@@ -134,9 +131,7 @@ L'agent utilise l'application mobile Android pour :
 ### Base de données
 
 - MySQL
-- MySQL Workbench
-- SQL
-
+- 
 ### Infrastructure et déploiement
 
 - Cloudflare Quick Tunnel
